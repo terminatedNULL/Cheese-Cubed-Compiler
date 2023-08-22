@@ -3,6 +3,10 @@
 #include <string>
 #include <fstream>
 
+int iine;
+int putback;
+FILE* inFile;
+
 int CALLBACK WinMain(
     HINSTANCE   hInstance,
     HINSTANCE   hPrevInstance,
