@@ -23,8 +23,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="testCheeseFile.txt" />
-    <Text Include="baseTest.txt" />
+    <Text Include="debuggingFiles\baseTest.txt" />
+    <Text Include="debuggingFiles\testCheeseFile.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data.h">
