@@ -32,6 +32,13 @@ static int skip(void) {
 	return c;
 }
 
+static int charPos(char* s, int c) {
+	char* p;
+
+	p = strchr(s, c);
+	return (p ? p - s : -1);
+}
+
 static int scanInt(int c) {
 	int k, val = 0;
 
@@ -44,14 +51,7 @@ static int scanInt(int c) {
 	return val;
 }
 
-static int charPos(char* s, int c) {
-	char* p;
-
-	p = strchr(s, c);
-	return (p ? p - s : -1);
-}
-
-int scan(token *t) {
+static int scan(token *t) {
 	int c;
 
 	c = skip();
@@ -73,7 +73,7 @@ int scan(token *t) {
 		break;
 	default:
 		if (isdigit(c)) {
-			t->intValue = scanTnt(c);
+			t->intValue = scanInt(c);
 			t->token = T_INT_LITERAL;
 			break;
 		}

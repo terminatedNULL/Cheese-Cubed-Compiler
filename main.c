@@ -1,7 +1,4 @@
 #include <windows.h>
-#include <iostream>
-#include <string>
-#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,17 +7,13 @@
 #include "data.h"
 #include "definitions.h"
 
-int iine;
+int line;
 int holdChar;
 FILE* inFile;
 
-char tokenStr[5][10] = {
-    "+",
-    "-",
-    "*",
-    "/",
-    "intLit"
-};
+char* tokenStr[] = { "+", "-", "*", "/", "intlit" };
+
+static void scanFile();
 
 int CALLBACK WinMain(
     HINSTANCE   hInstance,
@@ -29,9 +22,9 @@ int CALLBACK WinMain(
     int         nCmdShow
 )
 {
-    std::string debugFilePath = "testCheeseFile.txt";
+    const char* debugFilePath = "baseTest.txt";
 
-    inFile = fopen(debugFilePath.c_str(), "r");
+    inFile = fopen(debugFilePath, "r");
 
     scanFile();
 
