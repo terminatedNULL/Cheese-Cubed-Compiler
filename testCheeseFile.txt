@@ -1,0 +1,51 @@
+set __CHEESETYPE__ { #Sets the value or call behavior of an object, an override
+	pasteurized wheel <cheddarOverride> : __CHEESETYPE__ {
+		
+	}
+} ( __CHEEDDAR__ )
+
+opt_cheese_type wheel < __CHEDDAR__ > {
+  word input = ""
+  repeatVal<num> = 3
+  val<word, num, *> users = ["John", "Amy"] * [1, 2]
+
+	gouda("Hello, World!") & repeatVal { "\n" } #Print, return repeatVal (3) lines
+	swiss {inputVar<word, *>} #User Input into a new variable with rotation
+	word inputWord.(inputVar)
+
+
+  eval { 
+    num sto = 4
+	} fail {
+    check fail_case {	#Checks the value of an internal or program
+			gouda "Cannot Add Values of Word and Num!" /r/
+		} ( __type_op__ )
+	}
+
+	spill __CHEDDAR__ #Returns from function, sets internal __cheddar__ 
+}
+
+#*
+() - denotes function call
+{} - denotes enclosed code or variable usage (?)
+[] - denotes indexed object
+<> - denotes typing
+// - denotes optional arguments
+num<type, *> - A dynamically typeable number, assigns type on declaration. Specific type can be 
+							assigned on declaration along with rotateable type, meaning its type is dynamically
+    					castable to other number types using a rotation function. Upon rotation, a value will
+							be returned corresponding to the distance rotated. The type can be accessed by assigning
+							the returned value to a var<type>.
+word<encoding, *> - A dynamically encodeable string, assigns encoding on declaration (default to UNICODE). 
+char<Encoding, *> - 
+bool<*> - 
+val<type, *> - 
+
+wheelReturnType wheel <wheelName> : inputObjects {
+	wheelCodeGoesHere
+}
+
+set typeOfThingToSet {
+	codeForThingBeingSet
+} ( specificThingBeingSet )
+*#
