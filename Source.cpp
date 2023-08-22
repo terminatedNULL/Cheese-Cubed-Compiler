@@ -4,7 +4,7 @@
 #include <fstream>
 
 int iine;
-int putback;
+int holdChar;
 FILE* inFile;
 
 int CALLBACK WinMain(

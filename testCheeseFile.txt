@@ -1,15 +1,19 @@
 set __CHEESETYPE__ { #Sets the value or call behavior of an object, an override
+					 #__CHEESETYPE__ is the interal entry point of the program
+					 #The "__CHEDDAR__" specifies that it is only replacing __CHEDDAR__
+					 #You can also use "__ANYCHEESE__" to imply no specific target
+
 	pasteurized wheel <cheddarOverride> : __CHEESETYPE__ {
-		
+		#This is now set as the entry point of the program
 	}
 } ( __CHEEDDAR__ )
 
 opt_cheese_type wheel < __CHEDDAR__ > {
   word input = ""
-  repeatVal<num> = 3
+  num<int> repeatVal = 3
   val<word, num, *> users = ["John", "Amy"] * [1, 2]
 
-	gouda("Hello, World!") & repeatVal { "\n" } #Print, return repeatVal (3) lines
+	gouda("Hello, World!") AND repeatVal { "\n" } #Print, return repeatVal (3) lines
 	swiss {inputVar<word, *>} #User Input into a new variable with rotation
 	word inputWord.(inputVar)
 
@@ -29,7 +33,7 @@ opt_cheese_type wheel < __CHEDDAR__ > {
 () - denotes function call
 {} - denotes enclosed code or variable usage (?)
 [] - denotes indexed object
-<> - denotes typing
+<> - denotes non-castable typing (similar to const)
 // - denotes optional arguments
 num<type, *> - A dynamically typeable number, assigns type on declaration. Specific type can be 
 							assigned on declaration along with rotateable type, meaning its type is dynamically
@@ -39,7 +43,7 @@ num<type, *> - A dynamically typeable number, assigns type on declaration. Speci
 word<encoding, *> - A dynamically encodeable string, assigns encoding on declaration (default to UNICODE). 
 char<Encoding, *> - 
 bool<*> - 
-val<type, *> - 
+val<type, *> - Cheese-specific variable type similar to an array, with rotation.
 
 wheelReturnType wheel <wheelName> : inputObjects {
 	wheelCodeGoesHere
@@ -48,4 +52,8 @@ wheelReturnType wheel <wheelName> : inputObjects {
 set typeOfThingToSet {
 	codeForThingBeingSet
 } ( specificThingBeingSet )
+
+get typeOfThingToGet {
+	codeForThingBeingRetrieved
+} ( specificThingBeingRetrieved )
 *#

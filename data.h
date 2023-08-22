@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 extern int line;
-extern int putback;
+extern int holdChar;
 extern FILE* inFile;
 
 #endif
