@@ -3,7 +3,7 @@
 
 typedef struct {
 	int token;
-	int tokenValue;
+	int intValue;
 } token;
 
 enum {

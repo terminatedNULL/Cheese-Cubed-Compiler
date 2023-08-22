@@ -1,3 +1,5 @@
+#include <ctype.h>
+
 #include "data.h"
 #include "definitions.h"
 
@@ -30,6 +32,25 @@ static int skip(void) {
 	return c;
 }
 
+static int scanInt(int c) {
+	int k, val = 0;
+
+	while ((k = charPos("0123456789", c)) >= 0) {
+		val = val * 10 + k;
+		c = next();
+	}
+
+	putBack(c);
+	return val;
+}
+
+static int charPos(char* s, int c) {
+	char* p;
+
+	p = strchr(s, c);
+	return (p ? p - s : -1);
+}
+
 int scan(token *t) {
 	int c;
 
@@ -39,9 +60,26 @@ int scan(token *t) {
 	case EOF:
 		return 0;
 	case '+':
-		return t->token = T_PLUS;
+		t->token = T_PLUS;
+		break;
 	case '-':
-		return t->token = T_MINUS;
-
+		t->token = T_MINUS;
+		break;
+	case '*':
+		t->token = T_STAR;
+		break;
+	case '/':
+		t->token = T_SLASH;
+		break;
+	default:
+		if (isdigit(c)) {
+			t->intValue = scanTnt(c);
+			t->token = T_INT_LITERAL;
+			break;
+		}
+		printf("Unrecognized character %c on line %d\n", c, line);
+		exit(-1);
 	}
+
+	return 1;
 }
