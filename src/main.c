@@ -3,27 +3,26 @@
 #include <stdlib.h>
 
 #include "scan.c"
+#include "tree.c"
+#include "parser.c"
 
 #include "data.h"
 #include "definitions.h"
 
+static void scanFile(void);
+
 int line = 0;
 int holdChar = 0;
 FILE* inFile;
+Token currToken;
 
-char* tokenStr[] = { "+", "-", "*", "/", "intlit" };
-
-static void scanFile();
-
-
-int main() {
+int main(int argc, char *argv[]) {
     const char* debugFilePath = "baseTest.txt";
 
     inFile = fopen(debugFilePath, "r");
 
     if (!inFile) {
-        printf("Failed to open file");
-
+        fprintf(stderr, "Failed to open file %s\n", argv[0]);
         exit(-1);
     }
 
@@ -34,12 +33,13 @@ int main() {
 	return 0;
 }
 
-static void scanFile() {
-    struct token T;
+static void scanFile(void) {
+    char* tokenStr[] = { "+", "-", "*", "/", "intlit" };
+    Token T;
 
     while (scan(&T)) {
-        printf("Token %s", tokenStr[T.token]);
-        if (T.token == T_INT_LITERAL) {
+        printf("Token %s", tokenStr[T.Token]);
+        if (T.Token == T_INT_LITERAL) {
             printf(", value %d", T.intValue);
         }
         printf("\n");

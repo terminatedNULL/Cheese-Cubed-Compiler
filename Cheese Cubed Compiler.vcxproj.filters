@@ -21,6 +21,12 @@
     <ClCompile Include="src\scan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="baseTest.txt" />

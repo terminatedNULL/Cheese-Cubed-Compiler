@@ -131,8 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\parser.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\scan.c" />
+    <ClCompile Include="src\tree.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="baseTest.txt" />

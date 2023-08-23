@@ -51,7 +51,7 @@ static int scanInt(int c) {
 	return val;
 }
 
-static int scan(struct token *t) {
+static int scan(Token *t) {
 	int c;
 
 	c = skip();
@@ -60,21 +60,21 @@ static int scan(struct token *t) {
 	case EOF:
 		return 0;
 	case '+':
-		t->token = T_PLUS;
+		t->Token = T_PLUS;
 		break;
 	case '-':
-		t->token = T_MINUS;
+		t->Token = T_MINUS;
 		break;
 	case '*':
-		t->token = T_STAR;
+		t->Token = T_STAR;
 		break;
 	case '/':
-		t->token = T_SLASH;
+		t->Token = T_SLASH;
 		break;
 	default:
 		if (isdigit(c)) {
 			t->intValue = scanInt(c);
-			t->token = T_INT_LITERAL;
+			t->Token = T_INT_LITERAL;
 			break;
 		}
 		printf("Unrecognized character %c on line %d\n", c, line);
