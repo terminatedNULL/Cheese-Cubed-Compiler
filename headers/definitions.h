@@ -1,10 +1,10 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-typedef struct {
+struct token {
 	int token;
 	int intValue;
-} token;
+};
 
 enum {
 	T_PLUS,
@@ -12,8 +12,8 @@ enum {
 	T_STAR,
 	T_SLASH,
 	T_INT_LITERAL,
-	T_WORD_LITERAL,
-
+	T_OPEN_PAREN,
+	T_CLOSE_PAREN
 };
 
 #endif

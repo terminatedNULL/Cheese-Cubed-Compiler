@@ -15,22 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="scan.c">
+    <ClCompile Include="src\scan.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="debuggingFiles\baseTest.txt" />
-    <Text Include="debuggingFiles\testCheeseFile.txt" />
+    <Text Include="baseTest.txt" />
+    <Text Include="testCheeseFile.txt" />
+    <Text Include="outputFile.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data.h">
+    <ClInclude Include="headers\data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="definitions.h">
+    <ClInclude Include="headers\definitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

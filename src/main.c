@@ -7,32 +7,35 @@
 #include "data.h"
 #include "definitions.h"
 
-int line;
-int holdChar;
+int line = 0;
+int holdChar = 0;
 FILE* inFile;
 
 char* tokenStr[] = { "+", "-", "*", "/", "intlit" };
 
 static void scanFile();
 
-int CALLBACK WinMain(
-    HINSTANCE   hInstance,
-    HINSTANCE   hPrevInstance,
-    LPSTR       lpCmdLine,
-    int         nCmdShow
-)
-{
+
+int main() {
     const char* debugFilePath = "baseTest.txt";
 
     inFile = fopen(debugFilePath, "r");
 
-    scanFile();
+    if (!inFile) {
+        printf("Failed to open file");
+
+        exit(-1);
+    }
+
+    scanFile();  
+
+    fclose(inFile);
 
 	return 0;
 }
 
 static void scanFile() {
-    token T;
+    struct token T;
 
     while (scan(&T)) {
         printf("Token %s", tokenStr[T.token]);

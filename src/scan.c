@@ -51,7 +51,7 @@ static int scanInt(int c) {
 	return val;
 }
 
-static int scan(token *t) {
+static int scan(struct token *t) {
 	int c;
 
 	c = skip();
