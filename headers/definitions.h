@@ -2,13 +2,14 @@
 #define DEFINITIONS_H
 
 enum {
+	T_EOF,
 	T_PLUS,
 	T_MINUS,
 	T_STAR,
 	T_SLASH,
 	T_INT_LITERAL,
 	T_OPEN_PAREN,
-	T_CLOSE_PAREN
+	T_CLOSE_PAREN,
 };
 
 enum {
@@ -18,7 +19,7 @@ enum {
 	A_DIVIDE,
 	A_INT_LITERAL,
 	A_OPEN_PAREN,
-	A_CLOSE_PAREN
+	A_CLOSE_PAREN,
 };
 
 typedef struct {

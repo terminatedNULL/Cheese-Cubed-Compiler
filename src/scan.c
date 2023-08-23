@@ -1,7 +1,8 @@
 #include <ctype.h>
 
-#include "data.h"
 #include "definitions.h"
+#include "data.h"
+#include "declarations.h"
 
 static int next(void) {
 	int c;
@@ -51,13 +52,14 @@ static int scanInt(int c) {
 	return val;
 }
 
-static int scan(Token *t) {
+int scan(Token *t) {
 	int c;
 
 	c = skip();
 
 	switch (c) {
 	case EOF:
+		t->Token = T_EOF;
 		return 0;
 	case '+':
 		t->Token = T_PLUS;

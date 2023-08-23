@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\interpreter.c" />
     <ClCompile Include="src\parser.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\scan.c" />
@@ -144,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="headers\data.h" />
     <ClInclude Include="headers\definitions.h" />
+    <ClInclude Include="src\declarations.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

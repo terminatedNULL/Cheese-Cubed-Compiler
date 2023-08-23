@@ -27,6 +27,9 @@
     <ClCompile Include="src\parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\interpreter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="baseTest.txt" />
@@ -38,6 +41,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\declarations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

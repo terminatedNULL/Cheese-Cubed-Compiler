@@ -1,11 +1,7 @@
-#ifndef DATA_H
-#define DATA_H
-
 #include <stdio.h>
+#include "definitions.h"
 
 extern int line;
 extern int holdChar;
 extern FILE* inFile;
 extern Token currToken;
-
-#endif

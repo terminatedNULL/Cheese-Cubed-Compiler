@@ -1,5 +1,6 @@
 #include "definitions.h"
 #include "data.h"
+#include "declarations.h"
 
 ASTnode *createASTNode(int op, int intValue, ASTnode *right, ASTnode *left) {
 	ASTnode *node;

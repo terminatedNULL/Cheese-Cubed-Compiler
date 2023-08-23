@@ -2,23 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "scan.c"
-#include "tree.c"
-#include "parser.c"
-
-#include "data.h"
 #include "definitions.h"
+#include "data.h"
+#include "declarations.h"
 
-static void scanFile(void);
-
-int line = 0;
-int holdChar = 0;
-FILE* inFile;
-Token currToken;
+static void init(void) {
+    line = 1;
+    holdChar = '\n';
+}
 
 int main(int argc, char *argv[]) {
-    const char* debugFilePath = "baseTest.txt";
-
+    const char* debugFilePath = "bseTest.txt";
     inFile = fopen(debugFilePath, "r");
 
     if (!inFile) {
@@ -26,22 +20,12 @@ int main(int argc, char *argv[]) {
         exit(-1);
     }
 
-    scanFile();  
+    ASTnode* node;
+
+    scan(&currToken);
+    node = binaryExpr();
+    printf("%d\n", interpretAST(node));
 
     fclose(inFile);
-
-	return 0;
-}
-
-static void scanFile(void) {
-    char* tokenStr[] = { "+", "-", "*", "/", "intlit" };
-    Token T;
-
-    while (scan(&T)) {
-        printf("Token %s", tokenStr[T.Token]);
-        if (T.Token == T_INT_LITERAL) {
-            printf(", value %d", T.intValue);
-        }
-        printf("\n");
-    }
+    exit(0);
 }
