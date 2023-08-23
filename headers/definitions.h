@@ -1,6 +1,11 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
 enum {
 	T_EOF,
 	T_PLUS,

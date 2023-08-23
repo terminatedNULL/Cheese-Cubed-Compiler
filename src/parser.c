@@ -48,3 +48,7 @@ ASTnode *binaryExpr(void) {
 
 	return node;
 }
+
+ASTnode *multiplicativeExpr() {
+
+}

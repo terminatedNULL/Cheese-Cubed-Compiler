@@ -3,7 +3,9 @@
 #include <stdlib.h>
 
 #include "definitions.h"
-#include "data.h"
+#define extern_
+    #include "data.h"
+#undef extern_
 #include "declarations.h"
 
 static void init(void) {
@@ -12,13 +14,15 @@ static void init(void) {
 }
 
 int main(int argc, char *argv[]) {
-    const char* debugFilePath = "bseTest.txt";
+    const char* debugFilePath = "baseTest.txt";
     inFile = fopen(debugFilePath, "r");
 
     if (!inFile) {
-        fprintf(stderr, "Failed to open file %s\n", argv[0]);
+        fprintf(stderr, "Failed to open file %s\n", argv[1]);
         exit(-1);
     }
+
+    init();
 
     ASTnode* node;
 

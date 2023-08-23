@@ -1,5 +1,3 @@
-#include <ctype.h>
-
 #include "definitions.h"
 #include "data.h"
 #include "declarations.h"
